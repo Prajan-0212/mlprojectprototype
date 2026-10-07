@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AnalyzeRouteImport } from './routes/analyze'
+import { Route as CalculatorRouteImport } from './routes/calculator'
+import { Route as ChecklistRouteImport } from './routes/checklist'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as ModelRouteImport } from './routes/model'
+import { Route as ReportRouteImport } from './routes/report'
+import { Route as ScenariosRouteImport } from './routes/scenarios'
+import { Route as SimulatorRouteImport } from './routes/simulator'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyzeRoute = AnalyzeRouteImport.update({
+  id: '/analyze',
+  path: '/analyze',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChecklistRoute = ChecklistRouteImport.update({
+  id: '/checklist',
+  path: '/checklist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelRoute = ModelRouteImport.update({
+  id: '/model',
+  path: '/model',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenariosRoute = ScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulatorRoute = SimulatorRouteImport.update({
+  id: '/simulator',
+  path: '/simulator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analyze': typeof AnalyzeRoute
+  '/calculator': typeof CalculatorRoute
+  '/checklist': typeof ChecklistRoute
+  '/history': typeof HistoryRoute
+  '/model': typeof ModelRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulator': typeof SimulatorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analyze': typeof AnalyzeRoute
+  '/calculator': typeof CalculatorRoute
+  '/checklist': typeof ChecklistRoute
+  '/history': typeof HistoryRoute
+  '/model': typeof ModelRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulator': typeof SimulatorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analyze': typeof AnalyzeRoute
+  '/calculator': typeof CalculatorRoute
+  '/checklist': typeof ChecklistRoute
+  '/history': typeof HistoryRoute
+  '/model': typeof ModelRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/simulator': typeof SimulatorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/analyze'
+    | '/calculator'
+    | '/checklist'
+    | '/history'
+    | '/model'
+    | '/report'
+    | '/scenarios'
+    | '/simulator'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/analyze'
+    | '/calculator'
+    | '/checklist'
+    | '/history'
+    | '/model'
+    | '/report'
+    | '/scenarios'
+    | '/simulator'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/analyze'
+    | '/calculator'
+    | '/checklist'
+    | '/history'
+    | '/model'
+    | '/report'
+    | '/scenarios'
+    | '/simulator'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AnalyzeRoute: typeof AnalyzeRoute
+  CalculatorRoute: typeof CalculatorRoute
+  ChecklistRoute: typeof ChecklistRoute
+  HistoryRoute: typeof HistoryRoute
+  ModelRoute: typeof ModelRoute
+  ReportRoute: typeof ReportRoute
+  ScenariosRoute: typeof ScenariosRoute
+  SimulatorRoute: typeof SimulatorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyze': {
+      id: '/analyze'
+      path: '/analyze'
+      fullPath: '/analyze'
+      preLoaderRoute: typeof AnalyzeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checklist': {
+      id: '/checklist'
+      path: '/checklist'
+      fullPath: '/checklist'
+      preLoaderRoute: typeof ChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/model': {
+      id: '/model'
+      path: '/model'
+      fullPath: '/model'
+      preLoaderRoute: typeof ModelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenarios': {
+      id: '/scenarios'
+      path: '/scenarios'
+      fullPath: '/scenarios'
+      preLoaderRoute: typeof ScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulator': {
+      id: '/simulator'
+      path: '/simulator'
+      fullPath: '/simulator'
+      preLoaderRoute: typeof SimulatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AnalyzeRoute: AnalyzeRoute,
+  CalculatorRoute: CalculatorRoute,
+  ChecklistRoute: ChecklistRoute,
+  HistoryRoute: HistoryRoute,
+  ModelRoute: ModelRoute,
+  ReportRoute: ReportRoute,
+  ScenariosRoute: ScenariosRoute,
+  SimulatorRoute: SimulatorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
